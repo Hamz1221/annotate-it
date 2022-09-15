@@ -53,7 +53,7 @@ const ListTasks = ({ tasks, documentTitles, path }) => {
     }
     const searchTasks = () => {
         let newTasks = allTasks.filter((task) => {
-            return (documentTitles[task.id].toLowerCase().includes(searchInput.toLowerCase()) ||
+            return (task.documentTitle.toLowerCase().includes(searchInput.toLowerCase()) ||
                 task.question.text.toLowerCase().includes(searchInput.toLowerCase()))
         })
 
@@ -91,7 +91,7 @@ const ListTasks = ({ tasks, documentTitles, path }) => {
                                         fluid color="blue"
                                         style={viewCardStyle}
                                         href={`${path}${task.id}`}
-                                        header={`Document title: ${documentTitles[task.id]}`}
+                                        header={`Document title: ${task.documentTitle}`}
                                         meta={`Created ${task.createdAt.substring(0, 10)}`}
                                         description={`Question: ${task.question.text}`}
                                     />

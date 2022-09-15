@@ -5,13 +5,6 @@ const TextHeatMap = ({ documentLabels, documentText, tag }) => {
   const [highlightedText, setHighlightedText] = useState("Loading text...");
 
   const [labelsText, setLabelsText] = useState({})
-  // const [labels, setLabels] = useState(documentLabels)
-
-
-  // useEffect(() => {
-  //   setLabels(documentLabels)
-
-  // }, [documentLabels])
 
   useEffect(() => {
     insertSpan(documentText, " ");
